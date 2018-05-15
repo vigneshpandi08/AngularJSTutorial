@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--<div ng-controller="studentController">
+        <input type="button" value="Get" ng-click="GetStudent()" />
+        {{MyValue}}
+        <ul ng-repeat="Stud in MyValue">
+            <li>StudentID:{{Stud.StudentID}} City:{{Stud.City}}</li>
+        </ul>
+        <select ng-model="student" ng-options="Stud.StudentID as Stud.City for Stud in MyValue"></select>
+        {{student}}
+
+        <table class="table-striped" width="100%">
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Class</th>
+                <th>City</th>
+                <th>City1</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Mark</th>
+                <th>MobileNo</th>
+                <th>Resume</th>
+            </tr>
+            <tr ng-repeat="Stud in MyValue">
+                <td>{{Stud.StudentID}}</td>
+                <td>{{Stud.Name}}</td>
+                <td>{{Stud.Email}}</td>
+                <td>{{Stud.Class}}</td>
+                <td>{{Stud.City}}</td>
+                <td>{{Stud.city1}}</td>
+                <td>{{Stud.DOB | date : 'dd/MM/yyyy'}}</td>
+                <td>{{Stud.Gender}}</td>
+                <td>{{Stud.Mark}}</td>
+                <td>{{Stud.MobileNo}}</td>
+                <td>{{Stud.Resume}}</td>
+            </tr>
+        </table>
+    </div>-->
+    <div ng-controller="cityController">
+        <input type="button" value="Get" ng-click="GetCityLists()" />
+        <div ng-controller="studentController">
+            <select ng-model="city" ng-change="GetStudent()"
+                    ng-options="City.id as City.cityname for City in CityLists"></select>
+            <select ng-model="student"  ng-options="Stud.StudentID as Stud.Name for Stud in Students"></select>
+            <table class="table-striped" width="100%">
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Class</th>
+                    <th>City</th>
+                    <th>City1</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Mark</th>
+                    <th>MobileNo</th>
+                    <th>Resume</th>
+                </tr>
+                <tr ng-repeat="Stud in Students">
+                    <td>{{Stud.StudentID}}</td>
+                    <td>{{Stud.Name}}</td>
+                    <td>{{Stud.Email}}</td>
+                    <td>{{Stud.Class}}</td>
+                    <td>{{Stud.City}}</td>
+                    <td>{{Stud.city1}}</td>
+                    <td>{{Stud.DOB | date : 'dd/MM/yyyy'}}</td>
+                    <td>{{Stud.Gender}}</td>
+                    <td>{{Stud.Mark}}</td>
+                    <td>{{Stud.MobileNo}}</td>
+                    <td>{{Stud.Resume}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<script src="Scripts/angular.min.js"></script>
+<script src="myapp.js"></script>
+<script src="Scripts/bootstrap.min.js"></script>
+<link href="Content/bootstrap.min.css" rel="stylesheet" />

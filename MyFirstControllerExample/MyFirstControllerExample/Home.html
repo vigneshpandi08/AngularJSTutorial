@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    
+    <div ng-controller="MyController">
+        {{2+3}}
+        {{MyValue}}
+        <input type="text" ng-model="MyValue" />
+        <input type="button" ng-click="MyFunction()" value="Click" />
+        <input type="button" ng-click="MyFunction2(MyValue)" value="Click Me Again" />
+    </div>
+</body>
+</html>
+<script src="Scripts/angular.min.js"></script>
+<script src="Scripts/myapp.js"></script>
